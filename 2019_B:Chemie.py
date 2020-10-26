@@ -3,32 +3,28 @@
 # 1 + 1 > 0
 # 0 + 0 > 0
 # 1 + 0 > 1 | 0 + 1 > 1
-DEBUG = 1 
+DEBUG = 0
 
 def debug(a):
     if(DEBUG):
         print(a)
 
 
-T = int(input("T: "))
-
+T = int(input()) #T:
+answers = []
 for t in range(T):
-    M = int(input("\nRows M: "))
-    N = int(input("Collumns N: "))
+    TEMP = input() #Rows M: Collumns N:
+    TEMP = TEMP.split()
+    M = int(TEMP[0])
+    N = int(TEMP[1])
     
     arr = []
     for x in range(M):
         arr1 = []
-        numRow = input("Molecules: ")
-        numRow.split()
-        if(((len(numRow) + 1) >> 1) == N):
-            for x in range(0, N+2, 2):
-                arr1 += numRow[x]
-            
-            arr.append(arr1)
-        else:
-            print("wrong molecule quantity (N)")
-            quit()
+        numRow = input() #Molecules:
+        numRow = numRow.split()
+
+        arr.append(numRow)
     
     for i in range(M-1):
         arr2 = []
@@ -50,4 +46,7 @@ for t in range(T):
             arr2 += str( int(arr[i][j]) ^ int(arr[i+1][j]) )
             
         arr[i+1] = arr2
-    print(arr[-1])
+
+    for x in arr[-1]:
+        print(x, end = ' ')
+    print("\n")
