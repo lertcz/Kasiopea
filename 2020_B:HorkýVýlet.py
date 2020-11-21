@@ -27,18 +27,12 @@ for t in range(T):
         temp.sort()
         high.append(temp)
     
-    #for i in range(len(high)):
-    #    temp1 = []
-    #    temp1.append(int(high[i][0]))
-    #    temp1.append(int(high[i][1]))
-    #    temp1.append(int(high[i][2]))
-    #    if(max(temp1) < maxh):
-    maxh = 50
+    MAX = 50
     for i in high:
-        if(max(i) < maxh):
-            maxh = max(i)
+        if(max(i) < MAX):
+            MAX = max(i)
 
-    answers.append(maxh)
+    answers.append(MAX)
     #-------------------------------------
 
 for x in range(len(answers)):
